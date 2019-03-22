@@ -19,8 +19,7 @@
         'report/report_account_valuated.xml',
         #'views/stock_move_inherit.xml',
     ],
-    "qweb": [
-    ],
+
 
     "installable": True,
     "application": True,
