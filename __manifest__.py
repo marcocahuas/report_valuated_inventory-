@@ -21,9 +21,7 @@
     ],
     "qweb": [
     ],
-    'images': [
-        'static/description/intitecperu.png',
-    ],
+
     "installable": True,
     "application": True,
 }
