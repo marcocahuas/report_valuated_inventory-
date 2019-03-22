@@ -5,10 +5,10 @@ from odoo import models, fields, api
 
 
 class ItInvoiceHeaderReport(models.Model):
-    _name = 'it.units.header.report'
-    _description = "Reporte Unidades Fisicas invoice"
+    _name = 'it.inventory.header.report'
+    _description = "Reporte Inventario Valorizado invoice"
     # DETALLE
-    units_detalle = fields.One2many('it.report.physical.units', 'units_header_id', 'Detalle reporte')
+    valuated_detalle = fields.One2many('it.report.inventory.valuated', 'valuated_header_id', 'Detalle reporte')
     # DATOS CABECERA
 
     date_in = fields.Date(string='Fecha inicio')

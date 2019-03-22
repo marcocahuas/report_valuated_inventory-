@@ -3,11 +3,11 @@ from odoo import models, fields, api
 
 
 class UnidadesFisicas(models.Model):
-    _name = "it.report.physical.units"
-    _description = "Reporte Unidades Fisicas"
+    _name = "it.report.inventory.valuated"
+    _description = "Reporte Inventario Valorizado"
 
     # ID HEADER UNIDADES FISICAS
-    units_header_id = fields.Many2one('it.units.header.report', 'unidades header')
+    valuated_header_id = fields.Many2one('it.inventory.header.report', 'valuated header')
 
     date = fields.Char(string='Fecha')
     type_comprobante = fields.Char(string='Tipo (Tabla 10)')
