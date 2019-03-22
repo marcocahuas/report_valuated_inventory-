@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="it_inventario_valorizado_tree" model="ir.ui.view">
+            <field name="name">Reportes inventario valorizado</field>
+            <field name="model">it.inventory.header.report</field>
+            <field name="arch" type="xml">
+                <tree string="Inventario Valorizado">
+                    <field name="date_in"/>
+                    <field name="date_out"/>
+                    <field name="vat"/>
+                    <field name="business_name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="it_inventario_valorizado_form" model="ir.ui.view">
+            <field name="name">Reporte inventario valorizado</field>
+            <field name="model">it.inventory.header.report</field>
+            <field name="arch" type="xml">
+                <form string="Inventario Valorizado">
+                    <sheet string="Inventario Valorizado">
+                        <group>
+                            <group>
+                                <field name="business_name" placeholder="Razon Social"/>
+                                <field name="vat" placeholder="RUC"/>
+                            </group>
+                            <group>
+
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="date_in" placeholder="Fecha inicio" widget="date"/>
+                            </group>
+                            <group>
+                                <field name="date_out" placeholder="Fecha fin" widget="date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <button class="oe_highlight" name="btnCalc" string="Generar" type="object"/>
+                            </group>
+                            <group>
+                                <button class="oe_highlight" name="btnCalc2" string="Generar xlsxs" type="object"/>
+                            </group>
+                            <group>
+                                <field filename="txt_filename" name="txt_binary" readonly="1"/>
+                            </group>
+                        </group>
+                        <div>
+                           <!--aqui iba el detalle aa-->
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="it_inventario_valorizado_header_menu_action" model="ir.actions.act_window">
+            <field name="name">Reporte inventario valorizado</field>
+            <field name="res_model">it.inventory.header.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- CONFIGURACION UNIDADES FISICAS-->
+        <menuitem action="it_inventario_valorizado_header_menu_action" id="it_inventario_valorizado_menu" name="Inventario Valorizado"
+                  parent="account.menu_finance_reports" sequence="8"/>
+    </data>
+</odoo>
