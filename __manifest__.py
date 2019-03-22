@@ -17,7 +17,6 @@
     "depends": ["base"],
     "data": [
         'report/report_account_valuated.xml',
-        #'views/stock_move_inherit.xml',
     ],
 
 
