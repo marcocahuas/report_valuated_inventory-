@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ###############################################################################
-# UNIDADES FISICAS
+# INVENTARIO VALORIZADO
 ###############################################################################
 {
     "name": "Reporte Inventario Valorizado",
@@ -12,7 +12,7 @@
     "contributors": [
         "Kelvin Meza <kelvin.meza@intitecperu.com>",
     ],
-    "summary": "Unidades Fisicas",
+    "summary": "Inventario Valorizado",
     "description": "",
     "depends": ["base"],
     "data": [

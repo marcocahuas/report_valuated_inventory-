@@ -2,11 +2,11 @@
 from odoo import models, fields, api
 
 
-class UnidadesFisicas(models.Model):
+class InventoryValuated(models.Model):
     _name = "it.report.inventory.valuated"
     _description = "Reporte Inventario Valorizado"
 
-    # ID HEADER UNIDADES FISICAS
+    # ID HEADER INVENTARIO VALORIZADO
     valuated_header_id = fields.Many2one('it.inventory.header.report', 'valuated header')
 
     date = fields.Char(string='Fecha')

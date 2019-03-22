@@ -60,7 +60,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <!-- CONFIGURACION UNIDADES FISICAS-->
+        <!-- CONFIGURACION INVENTARIO VALORIZADO-->
         <menuitem action="it_inventario_valorizado_header_menu_action" id="it_inventario_valorizado_menu" name="Inventario Valorizado"
                   parent="account.menu_finance_reports" sequence="8"/>
     </data>
