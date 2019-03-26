@@ -35,16 +35,24 @@
                             <group>
                                 <field name="date_out" placeholder="Fecha fin" widget="date"/>
                             </group>
+                            <!--<group>-->
+                                <!--<field name="date_in_time" placeholder="Fecha inicio 2" widget="date" readonly="1"/>-->
+                            <!--</group>-->
+                            <!--<group>-->
+                                <!--<field name="date_out_time" placeholder="Fecha fin 2" widget="date" readonly="1"/>-->
+                            <!--</group>-->
                         </group>
                         <group>
-                            <group>
-                                <button class="oe_highlight" name="btnCalc" string="Generar" type="object"/>
+                             <group>
+                                <button class="oe_highlight" name="btnCalc" string="Generar xlsx" type="object"/>
                             </group>
                             <group>
-                                <button class="oe_highlight" name="btnCalc2" string="Generar xlsxs" type="object"/>
+                                <!--<button class="oe_highlight" name="btnCalc2" string="Generar xlsxs" type="object"/>-->
                             </group>
                             <group>
-                                <field filename="txt_filename" name="txt_binary" readonly="1"/>
+                                <field name="txt_filename" invisible="1"/>
+                                <field filename="txt_filename" name="txt_binary" invisible="1"/>
+                                <button name="check_download_txt_sunat" string="Descargar txt Sunat" type="object"/>
                             </group>
                         </group>
                         <div>
