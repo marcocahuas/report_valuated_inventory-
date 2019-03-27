@@ -14,7 +14,7 @@
     ],
     "summary": "Inventario Valorizado",
     "description": "",
-    "depends": ["base"],
+    "depends": ["base", 'stock'],
     "data": [
         'report/report_account_valuated.xml',
     ],
