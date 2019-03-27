@@ -8,7 +8,7 @@ from odoo import api, fields, models
 _logger = logging.getLogger(__name__)
 
 
-class ItInvoiceHeaderReport(models.Model):
+class MoveHeaderReport(models.Model):
     _name = 'it.inventory.header.report'
     _description = "Reporte Inventario Valorizado invoice"
     # DETALLE
@@ -80,23 +80,34 @@ class ItInvoiceHeaderReport(models.Model):
             [("date", ">=", self.date_in_time), ("date", "<=", self.date_out_time)])
 
         for stock_out in stock_move_after:
-            stringventas = "%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s" % (
+            stringventas = "%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s" % (
                 str(d_ref.year) + "" + str(month) + "00",  # campo 1
                 str("M") + str(stock_out.id),  # campo 2
+                "",
+                "",
+                "",
                 stock_out.product_id.it_existence.code or "",  # campo 6
-                stock_out.product_id.it_existence.id or "",  # revisar el campo 7
+                stock_out.product_id.it_existence.id or "",  # por corregir el campo 7
                 "",  # campo 8
                 stock_out.picking_id.it_date_gr or "",  # campo 9
                 stock_out.picking_id.catalog_01_id.code or "",  # campo 10
-                stock_out.picking_id.series.id or "",  # campo 11
+                stock_out.picking_id.series.series or "",  # campo 11
                 stock_out.picking_id.correlative or "",  # campo 12
-                stock_out.picking_id.type_transaction.id or "",  # campo 13
-                stock_out.product_id.it_existence.description or "",  # campo 14
-                stock_out.product_id.uom_id.code_unit_measure.code or "",  # campo 15
-                stock_out.product_id.id or "0",  # SALDO INICIAL campo 16
-                map_products_before[str_product_id],  # SALDO INICIAL campo 16
-
-                "",  # campo 19
+                stock_out.picking_id.type_transaction.code or "",  # campo 13 tipo operacion efect
+                stock_out.product_id.name or "",  # campo 14   descripcion de la exist
+                stock_out.product_id.uom_id.code_unit_measure.code or "",  # campo 15  cod uni med
+                "",  # campo 16 codigo de metodo val exist
+                map_products_before[str(stock_out.product_id.id)] or 0.00,  # SALDO INICIAL campo 17
+                "",  # campo 18  Costo unitario ingresado
+                "",  # campo 19  Costo total del bien ingresado
+                "",  # campo 20  Costo Cantidad de unidades físicas
+                "",  # campo 21  Costo unitario del bien retirado
+                "",  # campo 22 Costo total del bien retirado
+                "",  # campo 23 Cantidad de unidades físicas del saldo final
+                "",  # campo 24 Costo unitario del saldo final
+                "",  # campo 25 Costo total del saldo final
+                "",  # campo 26 Indica el estado de la operación
+                "",  # campo 27 Campos de libre utilización.
 
             )
 
