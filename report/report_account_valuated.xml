@@ -67,17 +67,17 @@
             <field name="view_mode">tree,form</field>
         </record>
         <!-- CONFIGURACION INVENTARIO VALORIZADO-->
-        <menuitem action="it_inventario_valorizado_header_menu_action" id="it_inventario_valorizado_menu"
-                  name="Inventario Valorizado"
-                  parent="account.menu_finance_reports" sequence="8"/>
-        <!--<report-->
-                <!--id="it_inventario_valorizado_xlsx"-->
-                <!--model="it.inventory.header.report"-->
-                <!--string="Exportar Excel"-->
-                <!--report_type="xlsx"-->
-                <!--name="report_xlsx.it.inventory.header.report_xlsx"-->
-                <!--file="Reporte"-->
-                <!--attachment_use="True"-->
-        <!--/>-->
+        <!--<menuitem action="it_inventario_valorizado_header_menu_action" id="it_inventario_valorizado_menu"-->
+                  <!--name="Inventario Valorizado"-->
+                  <!--parent="account.menu_finance_reports" sequence="8"/>-->
+        <report
+                id="it_inventario_valorizado_xlsx"
+                model="it.inventory.header.report"
+                string="Exportar Excel"
+                report_type="xlsx"
+                name="report_xlsx.it.inventory.header.report_xlsx"
+                file="Reporte"
+                attachment_use="True"
+        />
     </data>
 </odoo>
